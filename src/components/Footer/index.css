@@ -1,0 +1,8 @@
+footer{ text-align: center;margin-top: 10px;background-color: #000;color: white;bottom: 0;width: 100%;}
+.Footer-Title{display: flex;flex-direction: row;}
+.Footer-Img img {width: 50px;height: 50px; margin: auto}
+.Footer_Nav-navlogo{color: #fff;font-weight: bold;text-decoration: none;}
+.Footer-Container{display: flex; flex-direction: row; justify-content: space-around;}
+.Footer-Link{text-decoration: none; color: white;}
+.Footer-details{margin-left : 10px;margin-top: px; padding: 20px;}
+
