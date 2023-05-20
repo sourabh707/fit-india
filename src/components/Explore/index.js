@@ -10,10 +10,10 @@ function Explore() {
           <Card text="NUTRITION"  link ="/nutrition"/>
         </div>
         <div className="Explore_box">
-          <Card text="EXPERIENCE" link ="/exercise"/>
+          <Card text="EXPERIENCE" link ="/experience"/>
         </div>
         <div className="Explore_box">
-          <Card text="EXERCISES" link ="/experience"/>
+          <Card text="EXERCISES" link ="/exercise"/>
         </div>
       </div>
     </div>
