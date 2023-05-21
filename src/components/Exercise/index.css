@@ -1,0 +1,2 @@
+.Exercise-Container{ margin: auto; width: 75%; padding: 3%; min-height: 82vh;}  
+@media only screen and (max-width:680px){.Exercise-Container{ margin: auto; width: 100%; padding: 1.5%;}}
