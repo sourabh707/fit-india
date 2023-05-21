@@ -40,11 +40,6 @@ function NavBar() {
                         Experience
                     </Link>
                 </li>
-                <li className="NavigationBar_Nav-nav-item">
-                    <Link to="/" className="NavigationBar_Nav-nav-link" onClick={() => setOpen(false)}>
-                        About
-                    </Link>
-                </li>   
             </ul>
             <div onClick={() => setOpen(!open)} className="NavigationBar_Nav-nav-icon">
                 {open ? <FiX /> : <FiMenu />}

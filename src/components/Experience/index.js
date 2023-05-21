@@ -22,15 +22,15 @@ const Experience = () => {
         </div>
         <div className="col-md-3 text-start">
           <label className="form-label">Height</label>
-          <input type="number" className="form-control" placeholder='Height in cms' required/>
+          <input type="number" className="form-control" placeholder='Height (in cm)' required/>
         </div>
         <div className="col-md-6 text-start">
           <label className="form-label">Staring Height</label>
-          <input type="number" className="form-control" placeholder='Weight in kg' required/>
+          <input type="number" className="form-control" placeholder='Weight (in kg)' required/>
         </div>
         <div className="col-md-6 text-start">
           <label className="form-label">Present Weight</label>
-          <input type="number" className="form-control" placeholder=' Weight in kg' required />
+          <input type="number" className="form-control" placeholder=' Weight (in kg)' required />
         </div>
         <div className="col-md-12 text-start">
           <label  className="form-label">Suggestions & Comments</label>

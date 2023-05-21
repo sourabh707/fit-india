@@ -1,6 +1,6 @@
 @media only screen and (min-width:942px){
     .intro-container{display: flex;flex-direction: row;padding: 4% ; flex-wrap:initial;}
-    .intro-img img{width: 375px; margin-left: 9%;}
+    .intro-img img{width: 375px; margin-left: 9%; margin-top: 10%;}
     .intro-content{margin-left: 10%;}
     .intro-content p{font-size: 16px; }
 }

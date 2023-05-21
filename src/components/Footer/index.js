@@ -6,7 +6,7 @@ function About() {
     <footer>
       <div className='Footer-Container'>
         <div className='Footer-details'>
-          Made by Sourabh <a className='Footer-Link' href='https://github.com/sourabh707' target='blank'>@ Github  	&#128512;</a>
+          <i>Connect with me <a className='Footer-Link' href='https://github.com/sourabh707' target='blank'>@ Github  	&#128512;</a></i>
         </div>
       </div>
     </footer>
