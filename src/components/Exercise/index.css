@@ -1,5 +1,5 @@
 .Exercise-Container{ margin: auto; width: 75%; padding: 3%; min-height: 82vh;}  
-.exercise-card-container {display: flex;flex-wrap: wrap;justify-content:space-between ;overflow-y: auto;height: 450px;margin-top: 20px;padding-right: 20px;}
+.exercise-card-container {display: flex;flex-wrap: wrap;justify-content:space-between ;overflow-y: auto;height: 450px;margin-top: 20px;}
 .card {width: calc(33.33% - 20px);margin-bottom: 20px;}
 @media only screen and (min-width:681px) and (max-width : 942px){
     .card {width: calc(50% - 20px);margin-bottom: 20px;}
