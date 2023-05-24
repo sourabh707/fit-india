@@ -76,7 +76,7 @@ const Experience = () => {
 
 
 
-      <Modal show={showModal} onHide={handleCloseModal}>
+      <Modal show={showModal} onHide={handleCloseModal} centered> 
         <Modal.Header closeButton>
           <Modal.Title>Thanks for your suggestions!</Modal.Title>
         </Modal.Header>
