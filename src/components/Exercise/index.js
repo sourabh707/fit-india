@@ -32,6 +32,7 @@ function Exercise() {
   const [inputValue, setInputValue] = useState('');
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const defaultValues = ['abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps'];
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -56,9 +57,14 @@ function Exercise() {
   };
 
   useEffect(() => {
-    fetchData();
+    {
+      fetchData();
+    }
   }, []);
 
+  const handleSearch = () => {
+    fetchData();
+  };
   if (error) return `Error: ${error.message}`;
 
   return (
@@ -67,12 +73,26 @@ function Exercise() {
         <label htmlFor="exampleFormControlInput1 text-start" className="form-label mb-3">
           <h1>Body part Name</h1>
         </label>
-        <input type="text" className="form-control" placeholder="Enter body part name" value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={handleKeyPress} />
+        {/* <input type="text" className="form-control" list="defaultValues"placeholder="Enter body part name" value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={handleKeyPress} /> */}
+        <select
+          className="form-control"
+          value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={handleKeyPress}
+        >
+          <option value="">Select body part</option>
+          {defaultValues.map((value) => (
+            <option key={value} value={value}>
+              {value}
+            </option>
+          ))}
+        </select>
+        <button className="btn btn-primary mt-3" onClick={handleSearch}>
+          Search
+        </button>
       </div>
       <div className="exercise-card-container">
-          {data.map((exercise) => (
-            <ExerciseCard key={exercise.name} exercise={exercise} />
-          ))}
+        {data.map((exercise) => (
+          <ExerciseCard key={exercise.name} exercise={exercise} />
+        ))}
       </div>
     </div>
   );
