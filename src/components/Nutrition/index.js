@@ -23,9 +23,11 @@ function Nutrition() {
   const [error, setError] = React.useState(null);
   const [inputValue, setInputValue] = React.useState('');
   const [isSearchPerformed, setIsSearchPerformed] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const fetchData = async () => {
     try {
+      setIsLoading(true);
       const url = `https://api.api-ninjas.com/v1/nutrition?query=${inputValue}`;
       const headers = {
         'X-Api-Key': 'crhvbQXiAxGOczByUzQlGJwfXR5wjMufBdMvjCq7',
@@ -38,6 +40,8 @@ function Nutrition() {
     } catch (error) {
       console.log(error, 'error');
       setError(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -71,6 +75,7 @@ function Nutrition() {
           </button>
         </div>
       </form>
+      {isLoading && <div className="loader">Loading...</div>}
       {isSearchPerformed && data.length === 0 && <p>No data found. Please try another word.</p>}
       {data.length > 0 && (
         <div className="nutrition-card-container">

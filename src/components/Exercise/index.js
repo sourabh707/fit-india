@@ -33,6 +33,8 @@ function Exercise() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const defaultValues = ['abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps'];
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [isSearchPerformed, setIsSearchPerformed] = React.useState(false);
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -42,6 +44,7 @@ function Exercise() {
 
   const fetchData = async () => {
     try {
+      setIsLoading(true);
       const url = `https://api.api-ninjas.com/v1/exercises?muscle=${inputValue}`;
       const headers = {
         'X-Api-Key': 'crhvbQXiAxGOczByUzQlGJwfXR5wjMufBdMvjCq7'
@@ -49,10 +52,13 @@ function Exercise() {
 
       const response = await axios.get(url, { headers });
       setData(response.data);
+      setIsSearchPerformed(true);
       console.log(response.data, 'success');
     } catch (error) {
       console.log(error, 'error');
       setError(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -89,6 +95,8 @@ function Exercise() {
           Search
         </button>
       </div>
+      {isLoading && <div className="loader">Loading...</div>}
+      {isSearchPerformed && data.length === 0 && <p>No data found. Please try another word.</p>}
       <div className="exercise-card-container">
         {data.map((exercise) => (
           <ExerciseCard key={exercise.name} exercise={exercise} />
