@@ -63,11 +63,12 @@ function Nutrition ()  {
           Search
         </button>
       </div>
-      <div className="nutrition-card-container">
+      {data.length === 0 && <p>No data found. Please try another word.</p>}
+      {data && <div className="nutrition-card-container">
         {data.map((nutrition) => (
           <NutritionCard key={nutrition.name} nutrition={nutrition} />
         ))}
-      </div>
+      </div>}
     </div>
   )
 }
