@@ -15,9 +15,11 @@ const Experience = () => {
   });
 
   const [showModal, setShowModal] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setShowModal(true);
@@ -31,52 +33,137 @@ const Experience = () => {
       comments: '',
     });
   };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  
+  //   try {
+  //     // Make the API call to the backend
+  //     await fetch('http://localhost:8000/userdata', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+  
+  //     // Handle success
+      
+  //     setFormData({
+  //       firstName: '',
+  //       lastName: '',
+  //       email: '',
+  //       height: '',
+  //       startingWeight: '',
+  //       presentWeight: '',
+  //       comments: '',
+  //     });
+  
+  //     console.log('Data saved successfully');
+  //     setShowModal(true);
+  //   } catch (error) {
+  //     // Handle error
+  //     console.error('An error occurred', error);
+  //   }
+  // };
+  
 
   const handleCloseModal = () => {
     setShowModal(false);
-  };  
+  };
 
   return (
     <div className='Experience-container'>
-      {/* <h1>Share Your Experience</h1> */}
       <form className="row g-3" onSubmit={handleSubmit}>
         <h2>Share your Experience</h2>
         <div className="col-md-6 text-start">
           <label className="form-label text-start">First Name</label>
-          <input type="text" className="form-control" placeholder='First Name' required name='firstName' value={formData.firstName} onChange={handleChange} />
+          <input
+            type="text"
+            className="form-control"
+            placeholder='First Name'
+            required
+            name='firstName'
+            value={formData.firstName}
+            onChange={handleChange}
+          />
         </div>
         <div className="col-md-6 text-start">
           <label className="form-label">Last Name</label>
-          <input type="text" className="form-control" placeholder='Last Name' required name='lastName' value={formData.lastName} onChange={handleChange} />
+          <input
+            type="text"
+            className="form-control"
+            placeholder='Last Name'
+            required
+            name='lastName'
+            value={formData.lastName}
+            onChange={handleChange}
+          />
         </div>
         <div className="col-md-9 text-start">
           <label className="form-label">Email address</label>
-          <input type="email" className="form-control" placeholder='name@example.com' required name='email' value={formData.email} onChange={handleChange} />
+          <input
+            type="email"
+            className="form-control"
+            placeholder='name@example.com'
+            required
+            name='email'
+            value={formData.email}
+            onChange={handleChange}
+          />
         </div>
         <div className="col-md-3 text-start">
           <label className="form-label">Height</label>
-          <input type="number" className="form-control" placeholder='Height (in cm)' required name='height' value={formData.height} onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            placeholder='Height (in cm)'
+            required
+            name='height'
+            value={formData.height}
+            onChange={handleChange}
+          />
         </div>
         <div className="col-md-6 text-start">
-          <label className="form-label">Staring Height</label>
-          <input type="number" className="form-control" placeholder='Weight (in kg)' required name='startingWeight' value={formData.startingWeight} onChange={handleChange} />
+          <label className="form-label">Starting Weight</label>
+          <input
+            type="number"
+            className="form-control"
+            placeholder='Weight (in kg)'
+            required
+            name='startingWeight'
+            value={formData.startingWeight}
+            onChange={handleChange}
+          />
         </div>
         <div className="col-md-6 text-start">
           <label className="form-label">Present Weight</label>
-          <input type="number" className="form-control" placeholder=' Weight (in kg)' required name='presentWeight' value={formData.presentWeight} onChange={handleChange} />
+          <input
+            type="number"
+            className="form-control"
+            placeholder='Weight (in kg)'
+            required
+            name='presentWeight'
+            value={formData.presentWeight}
+            onChange={handleChange}
+          />
         </div>
         <div className="col-md-12 text-start">
           <label className="form-label">Suggestions & Comments</label>
-          <textarea className="form-control" rows="3" required name='comments' value={formData.comments} onChange={handleChange} />
+          <textarea
+            className="form-control"
+            rows="3"
+            required
+            name='comments'
+            value={formData.comments}
+            onChange={handleChange}
+          />
         </div>
         <div className="col">
           <button type="submit" className="btn btn-dark">Submit</button>
         </div>
       </form>
 
-
-
-      <Modal show={showModal} onHide={handleCloseModal} centered> 
+      <Modal show={showModal} onHide={handleCloseModal} centered>
         <Modal.Header closeButton>
           <Modal.Title>Thanks for your suggestions!</Modal.Title>
         </Modal.Header>
@@ -93,4 +180,4 @@ const Experience = () => {
   )
 };
 
-export default Experience
+export default Experience;
